@@ -1,7 +1,8 @@
 .cardMiniForfait{
     background-image: linear-gradient(  #00bcd4,lightblue,#b2ebf2); 
     display: flex; flex-direction: 
-    column; line-height: normal ;  
+    column; 
+    line-height: normal ;  
     padding:1em; 
     margin-left: 0.5em; 
     margin-right: 0.5em; 
@@ -85,7 +86,8 @@
 }
 
 .etoiles{
-    font-size: 2em;
+    font-size: 1em;
+    color: goldenrod
 }
 
 .jours{
@@ -140,7 +142,7 @@
 /*  Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1700px) { 
     .mat-card{
-    font-size: 135%;
+    font-size: 130%;
 } }
 
 

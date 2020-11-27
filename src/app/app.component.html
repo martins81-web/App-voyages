@@ -1,5 +1,4 @@
 
-<!--  -->
 <mat-grid-list cols="3" rowHeight="2:1">
     <span *ngFor="let item of mesForfaits">
         <mat-grid-tile *ngIf="item.forfaitVedette">
@@ -8,10 +7,5 @@
     </span>
 </mat-grid-list>
 
- <!-- <mat-grid-list cols="1" rowHeight="3:1" >
-    <mat-grid-tile *ngFor="let item of mesForfaits">
-        <app-forfait-complet  [forfait]="item" style="width: 100%;" ></app-forfait-complet >
-    </mat-grid-tile>
-</mat-grid-list>  
 
- -->
+<app-liste-forfaits></app-liste-forfaits> 

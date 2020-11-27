@@ -1,0 +1,33 @@
+
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .containeur{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  
+
+  .glow {
+    font-size: 70px;
+    text-align: center;
+    color: whitesmoke;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px goldenrod, 0 0 30px goldenrod, 0 0 40px goldenrod, 0 0 50px goldenrod, 0 0 60px goldenrod;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold, 0 0 50px gold, 0 0 60px gold, 0 0 70px gold;
+    }
+  }

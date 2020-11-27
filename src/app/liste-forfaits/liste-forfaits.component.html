@@ -1,5 +1,9 @@
 
-
-<span *ngFor="let item of mesForfaits">
-    <app-forfait [forfait]="item"></app-forfait>
- </span>
+<mat-list>
+    <span *ngFor="let item of mesForfaits">
+        <mat-list-item  style="height: auto; padding-bottom: 10px;padding-top: 10px;">  
+            <app-forfait-complet  [forfait]="item" style="width: 100%;" ></app-forfait-complet > 
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </span>
+</mat-list>

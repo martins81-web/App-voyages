@@ -1,50 +1,65 @@
+.cardMiniForfait{
+    background-image: linear-gradient(  #00bcd4,lightblue,#b2ebf2); 
+    display: flex; flex-direction: 
+    column; line-height: normal ;  
+    padding:1em; 
+    margin-left: 0.5em; 
+    margin-right: 0.5em; 
+    margin-top: 0.5em;
+}
 
+.cardHeader{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    flex:1
+}
 
-/*  Extra small devices (portrait phones, less than  376px)*/
-@media (max-width: 375.98px) { 
-    .mat-card{
-        font-size: 20%;
-    }
- }
-/* Small devices (landscape phones, 576px and up) */
- @media (min-width: 376px) and (max-width: 575.98px) { .mat-card{
-    font-size: 25%;
-} }
+.destination{
+    display: flex; 
+    flex-direction: column;
+}
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { .mat-card{
-    font-size: 42%;
-} }
+.destinationVillePays{
+    font-size: 1.2em;
+}
 
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) { .mat-card{
-    font-size: 55%;
-} }
+.villeDepart{
+    display: flex; 
+    justify-content: flex-end; 
+    font-size: 0.7em; 
+    color: gray;
+}
 
-/* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) { .mat-card{
-    font-size: 75%;
-} }
+.forfaitVedette{
+    box-shadow: 0.2em 0.3em #888888;
+    background-color: goldenrod;  
+    font-weight: lighter; 
+    border-radius: 0.5em;
+    font-size: 1.2em; 
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
 
-/*  Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { .mat-card{
-    font-size: 85%;
-} }
+.hotel{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    flex:1;
+    font-size: 2em;
+    color: darkblue;
+    margin-bottom: 0.8em; 
+    margin-top: 0.8em; 
+    font-weight: bolder;
+}
 
-/*  Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1500px) { .mat-card{
-    font-size: 120%;
-} }
-
-/*  Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1700px) { .mat-card{
-    font-size: 135%;
-} }
-
+.sectionPrix{
+    margin-bottom: 1.5em;
+}
 
 .cardPrix{
     display:flex; 
-    justify-content: space-around
+    justify-content: space-around;
+    font-size:1.6em;
 }
 
 .prixRabais{
@@ -59,5 +74,73 @@
 .prixAvecRabais{
     color: black
 }
+
+.footer{
+    display: flex; 
+    flex-direction: row; 
+    font-size: 1.2em;
+    justify-content: space-between;
+    flex:1; 
+    align-items:flex-end;
+}
+
+.etoiles{
+    font-size: 2em;
+}
+
+.jours{
+    color: firebrick;
+    font-weight: bold;
+}
+
+
+
+
+/*  Extra small devices (portrait phones, less than  376px)*/
+@media (max-width: 375.98px) { 
+    .mat-card{
+        font-size: 20%;
+    }
+ }
+/* Small devices (landscape phones, 576px and up) */
+ @media (min-width: 376px) and (max-width: 575.98px) { .mat-card{
+    font-size: 25%;
+} }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .mat-card{
+    font-size: 42%;
+} }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .mat-card{
+    font-size: 55%;
+} }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .mat-card{
+    font-size: 75%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .mat-card{
+    font-size: 85%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1500px) { 
+    .mat-card{
+    font-size: 120%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1700px) { 
+    .mat-card{
+    font-size: 135%;
+} }
 
 

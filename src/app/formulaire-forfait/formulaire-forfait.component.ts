@@ -12,12 +12,14 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./formulaire-forfait.component.css']
 })
 export class FormulaireForfaitComponent implements OnInit {
+  nbEtoiles: number = 2;
   destinationsControl = new FormControl();
   villesDepartControl = new FormControl();
   filteredDestinations:  Observable<string[]>;
   filteredVillesDepart:  Observable<string[]>;
   villesDepart: string[] = ['Montréal', 'Toronto', 'Québec', 'Ottawa'];
   destinations: string[] = ['Méxique', 'Cuba', 'République dominicaine', 'Costa Rica', 'Guadaloupe', 'Haïti','Jamaïque', 'Martinique','Honduras'];
+  
 
 
   ngOnInit() {

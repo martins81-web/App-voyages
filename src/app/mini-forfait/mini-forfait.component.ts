@@ -11,11 +11,28 @@ import { Forfait } from '../forfait';
 export class MiniForfaitComponent implements OnInit {
   @Input() forfait: Forfait;
 
-  constructor() { }
+  
+  constructor() {
+   }
+
+  
 
   ngOnInit(): void {
-    console.log('Forfait:', this.forfait );
+    let date1: Date = new Date(this.forfait.dateDeDepart); 
+    
+    console.log(date1);
+    //console.log('Forfait:', this.forfait );
 
   }
 
+  public duree(dateDeDepart: string, dateDeRetour:string): number {
+    let date1: Date = new Date(dateDeDepart); 
+    let date2: Date = new Date(dateDeRetour); 
+    return (date2.valueOf() - date1.valueOf())/ (1000 * 3600 * 24);
+  }
+
+  private date(date: string):Date{
+    return new Date(date);
+  }
+  
 }

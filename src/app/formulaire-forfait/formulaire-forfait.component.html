@@ -1,8 +1,9 @@
 <div style='padding:20px;margin:20px; border: 1px solid black'>
+    <h1>Formulaire nouveau forfait</h1>
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <input type="text"
-              placeholder="Choisissez une destination"
+              placeholder="Destination"
               aria-label="Number"
               matInput
               [formControl]="destinationsControl"
@@ -17,7 +18,7 @@
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <input type="text"
-              placeholder="Choisissez la ville de départ"
+              placeholder="Ville de départ"
               aria-label="Number"
               matInput
               [formControl]="villesDepartControl"
@@ -42,24 +43,52 @@
         <input matInput placeholder="Adresse...">
       </mat-form-field>
     </form>
+   
+    <div style='display: flex; align-items: center; '>
     <mat-label>Étoiles: </mat-label>
     <mat-slider
+        [(ngModel)]="nbEtoiles" 
         thumbLabel
         [displayWith]="formatLabel"  
         tickInterval="1"
         min="1"
         max="6">
       </mat-slider> 
+    <app-etoiles [etoiles]="nbEtoiles" style="color: goldenrod;"></app-etoiles>
+    
+    </div>
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Nombre de chambres</mat-label>
         <input matInput type="number" min="1" placeholder="Nombre de chambres...">
       </mat-form-field>
      </form>
+
+     <app-caracteristiques></app-caracteristiques>
+
+
+     <form class="example-form" style="margin-top:2em;">
+     <mat-form-field appearance="fill">
+      <mat-label>Date de départ</mat-label>
+      <input matInput [matDatepicker]="pickerDepart">
+      <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
+      <mat-datepicker #pickerDepart></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="margin-left: 10px;">
+      <mat-label>Date de retour</mat-label>
+      <input matInput [matDatepicker]="pickerRetour">
+      <mat-datepicker-toggle matSuffix [for]="pickerRetour"></mat-datepicker-toggle>
+      <mat-datepicker #pickerRetour></mat-datepicker>
+    </mat-form-field>
+  </form>
+
      <form class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Prix</mat-label>
         <input matInput type="number" min="1" placeholder="Prix...">
       </mat-form-field>
      </form>
+
+   
 </div>

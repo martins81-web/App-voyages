@@ -3,12 +3,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,8 +25,10 @@ import { ForfaitCompletComponent } from './forfait-complet/forfait-complet.compo
 import { ForfaitVedetteComponent } from './forfait-vedette/forfait-vedette.component';
 import { ForfaitComponent } from './forfait/forfait.component';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
+import { FormulaireRechercheComponent } from './formulaire-recherche/formulaire-recherche.component';
 import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
+import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,9 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     ForfaitCompletComponent,
     FormulaireForfaitComponent,
     EtoilesComponent,
-    ForfaitVedetteComponent
+    ForfaitVedetteComponent,
+    FormulaireRechercheComponent,
+    CaracteristiquesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,16 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     MatSliderModule,
     MatIconModule,
     MatListModule,
-    MatDividerModule,FontAwesomeModule
+    MatDividerModule,FontAwesomeModule,MatDatepickerModule,BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

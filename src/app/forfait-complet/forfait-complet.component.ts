@@ -1,12 +1,8 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { Forfait } from '../forfait';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+
 
 @Component({
   selector: 'app-forfait-complet',

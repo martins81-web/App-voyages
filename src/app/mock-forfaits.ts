@@ -95,8 +95,8 @@ export const forfaits : Forfait [] = [
                                 "Salle d'exercice", 
                                 'Coffret de sûreté'],
         },
-        dateDeDepart: '12-01-2021',
-        dateDeRetour: '26-01-2021',
+        dateDeDepart: '01-12-2021',
+        dateDeRetour: '01-26-2021',
         prix: 1209,
         rabais: 149,
         forfaitVedette: false

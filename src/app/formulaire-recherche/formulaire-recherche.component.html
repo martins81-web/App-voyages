@@ -1,8 +1,35 @@
-<mat-form-field appearance="fill">
+<div class="containerFormRecherche">
+  <h2>Recherche Forfait</h2>
+  <mat-form-field appearance="fill">
     <mat-label>Date de départ</mat-label>
     <input matInput [matDatepicker]="pickerDepart">
     <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
     <mat-datepicker #pickerDepart></mat-datepicker>
   </mat-form-field>
 
-  <app-caracteristiques></app-caracteristiques>
+  <mat-form-field appearance="fill">
+    <mat-label>Durée</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let duree of durees" [value]="duree.valeur">
+        {{duree.valeurAffichee}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-caracteristiques [direction]="direction"></app-caracteristiques>
+
+      <div style='display: flex; align-items: center; '>
+        <mat-label>Étoiles: </mat-label>
+        <mat-slider
+            required
+            [(ngModel)]="nbEtoiles" 
+            thumbLabel
+            [displayWith]="formatLabel"  
+            tickInterval="1"
+            min="1"
+            max="6">
+          </mat-slider> 
+        <app-etoiles [etoiles]="nbEtoiles" style="color: goldenrod;"></app-etoiles>
+  </div>
+</div>
+    

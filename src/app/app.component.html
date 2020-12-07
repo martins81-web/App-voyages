@@ -1,10 +1,12 @@
 
 <mat-drawer-container class="example-container" autosize>
+    <!-- Formulaire de recherche -->
     <mat-drawer #drawer class="example-sidenav" mode="side">
      <app-formulaire-recherche></app-formulaire-recherche>
     </mat-drawer>
   
-    <div class="example-sidenav-content">
+     <!-- Mini-forfaits (forfaits vedette) -->
+    <div>
         <mat-grid-list cols="3" rowHeight="2:1">
             <span *ngFor="let item of mesForfaits">
                 <mat-grid-tile *ngIf="item.forfaitVedette">
@@ -13,16 +15,18 @@
             </span>
         </mat-grid-list>
 
-      <button type="button" mat-button (click)="drawer.toggle()">
+      <button type="button" mat-button (click)="drawer.toggle()" mat-raised-button color="primary" style="margin: 10px;">
         Rechercher forfait
       </button>
+    
     </div>
+
+    <!-- Liste de forfaits complets -->
     <app-liste-forfaits></app-liste-forfaits> 
 
   </mat-drawer-container>
 
 
 
-
-
+ <!-- Formulaire de gestion -->
 <!-- <app-formulaire-forfait></app-formulaire-forfait> -->

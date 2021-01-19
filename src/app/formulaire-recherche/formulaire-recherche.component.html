@@ -2,34 +2,38 @@
   <h2>Recherche Forfait</h2>
   <mat-form-field appearance="fill">
     <mat-label>Date de départ</mat-label>
-    <input matInput [matDatepicker]="pickerDepart">
+    <input matInput [matDatepicker]="pickerDepart" [(ngModel)]="recherche.dateDepart" (ngModelChange)="changeDateDepart($event)">
     <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
     <mat-datepicker #pickerDepart></mat-datepicker>
   </mat-form-field>
 
+  
+
   <mat-form-field appearance="fill">
     <mat-label>Durée</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let duree of durees" [value]="duree.valeur">
+    <mat-select [(ngModel)]="recherche.duree" (ngModelChange)="changeDuree($event)">
+      <mat-option *ngFor="let duree of durees" [value]="duree.valeur"  >
         {{duree.valeurAffichee}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <app-caracteristiques [direction]="direction"></app-caracteristiques>
-
+  <app-caracteristiques [direction]="direction" [(caract)]="recherche.caracteristiques"></app-caracteristiques>
+  
+  <br>
       <div style='display: flex; align-items: center; '>
         <mat-label>Étoiles: </mat-label>
         <mat-slider
             required
-            [(ngModel)]="nbEtoiles" 
+            [(ngModel)]="recherche.nbEtoiles" 
+            (ngModelChange)="changeNbEtoiles($event)"
             thumbLabel
             [displayWith]="formatLabel"  
             tickInterval="1"
             min="1"
             max="6">
           </mat-slider> 
-        <app-etoiles [etoiles]="nbEtoiles" style="color: goldenrod;"></app-etoiles>
+        <app-etoiles [etoiles]="recherche.nbEtoiles" style="color: goldenrod;"></app-etoiles>
   </div>
 </div>
     

@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { AccueilComponent } from './accueil/accueil.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { ForfaitsCubaComponent } from './forfaits-cuba/forfaits-cuba.component';
+import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
+
+const routes: Routes = [
+  { path: 'accueil', component: AccueilComponent }, 
+  { path: 'apropos', component: AproposComponent },
+  { path: 'forfaitsCuba', component: ForfaitsCubaComponent },
+  { path: 'forfaitsMexique', component: ForfaitsMexiqueComponent },
+  { path: '', redirectTo:'/accueil', pathMatch:'full' }, 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

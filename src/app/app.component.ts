@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Forfait } from './forfait';
-import { forfaits } from './mock-forfaits';
+
 
 
 
@@ -13,11 +12,10 @@ import { forfaits } from './mock-forfaits';
 export class AppComponent {
 
   title = 'app-voyages-EricMartins';
-  mesForfaits: Array<Forfait> = forfaits;
-
+ 
   
   ngOnInit(): void {
-    console.log('Mes forfaits',this.mesForfaits);
+   
   }
 
 }

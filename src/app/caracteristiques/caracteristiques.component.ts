@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { Caracteristique } from '../caracteristique';
 
 @Component({
   selector: 'app-caracteristiques',
@@ -6,8 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./caracteristiques.component.css']
 })
 export class CaracteristiquesComponent implements OnInit {
+  constructor() { }
   @Input() direction: string;
-  caracteristiques = [
+  @Input() caract:  Array<Caracteristique>;
+  @Output() caractChange = new EventEmitter();
+  
+  change(nouvelleValeur) {
+    this.caractChange.emit(this.caracteristiques);
+  }
+
+  caracteristiques: Array<Caracteristique> = [
     { name: 'Face à la plage',  selected: false, id: 1 },
     { name: "Dans un lieu situé à proximité d'un parc/lieu naturel",  selected: false, id: 2 },
     { name: 'Ascenseur',  selected: false, id: 3 },
@@ -23,11 +33,13 @@ export class CaracteristiquesComponent implements OnInit {
     { name: "Près d'un lieu culturel",  selected: false, id: 13},
   ]
 
-  constructor() { }
+
+ 
 
   ngOnInit(): void {
-    console.log(this.direction);
   }
+
+  
 
 
 

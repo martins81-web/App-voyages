@@ -15,13 +15,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { AccueilComponent } from './accueil/accueil.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
+import { EnteteComponent } from './entete/entete.component';
 import { EtoilesComponent } from './etoiles/etoiles.component';
 import { ForfaitCompletComponent } from './forfait-complet/forfait-complet.component';
 import { ForfaitVedetteComponent } from './forfait-vedette/forfait-vedette.component';
@@ -29,6 +32,10 @@ import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forf
 import { FormulaireRechercheComponent } from './formulaire-recherche/formulaire-recherche.component';
 import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
+import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { ForfaitsCubaComponent } from './forfaits-cuba/forfaits-cuba.component';
+import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,13 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     EtoilesComponent,
     ForfaitVedetteComponent,
     FormulaireRechercheComponent,
-    CaracteristiquesComponent
+    CaracteristiquesComponent,
+    AccueilComponent,
+    EnteteComponent,
+    PiedDePageComponent,
+    AproposComponent,
+    ForfaitsCubaComponent,
+    ForfaitsMexiqueComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +80,8 @@ import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
     MatInputModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

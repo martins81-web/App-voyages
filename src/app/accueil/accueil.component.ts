@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Forfait } from '../forfait';
-import { forfaits } from '../mock-forfaits';
+import { ForfaitsService } from '../forfaits.service';
 import { Recherche } from '../recherche';
 
 @Component({
@@ -10,9 +10,9 @@ import { Recherche } from '../recherche';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
+  mesForfaits: Array<Forfait>;
+  constructor(private forfaitsService: ForfaitsService) { }
 
-  constructor() { }
-  mesForfaits: Array<Forfait> = forfaits;
   @Input() recherche: Recherche={
     dateDepart : null,
     duree: null,
@@ -20,6 +20,14 @@ export class AccueilComponent implements OnInit {
     nbEtoiles: null}
     ;
   ngOnInit(): void {
+    this.getForfaits();
+  }
+
+  getForfaits(): void {
+    this.forfaitsService.getForfaits()
+        .subscribe(resultat => {
+          this.mesForfaits = resultat
+        });
   }
 
 }

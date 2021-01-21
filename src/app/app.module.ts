@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -15,27 +16,30 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AccueilComponent } from './accueil/accueil.component';
+import { AdministrationComponent } from './administration/administration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AproposComponent } from './apropos/apropos.component';
 import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
 import { EnteteComponent } from './entete/entete.component';
 import { EtoilesComponent } from './etoiles/etoiles.component';
 import { ForfaitCompletComponent } from './forfait-complet/forfait-complet.component';
 import { ForfaitVedetteComponent } from './forfait-vedette/forfait-vedette.component';
+import { ForfaitsCubaComponent } from './forfaits-cuba/forfaits-cuba.component';
+import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
+import { ForfaitsService } from './forfaits.service';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
 import { FormulaireRechercheComponent } from './formulaire-recherche/formulaire-recherche.component';
 import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
 import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
-import { AproposComponent } from './apropos/apropos.component';
-import { ForfaitsCubaComponent } from './forfaits-cuba/forfaits-cuba.component';
-import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +57,12 @@ import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.co
     PiedDePageComponent,
     AproposComponent,
     ForfaitsCubaComponent,
-    ForfaitsMexiqueComponent
+    ForfaitsMexiqueComponent,
+    AdministrationComponent
   ],
   imports: [
+    MatTableModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -83,7 +90,7 @@ import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.co
     MatSelectModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [ForfaitsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

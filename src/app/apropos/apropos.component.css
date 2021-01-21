@@ -1,7 +1,7 @@
 
 
   .lorem{
-    height: 75vh;
+    min-height: 75vh;
     font-size: 20px;
     display: flex;
     flex-direction: column;

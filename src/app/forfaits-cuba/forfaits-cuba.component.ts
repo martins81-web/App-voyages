@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Forfait } from '../forfait';
-import { forfaits } from '../mock-forfaits';
+import { ForfaitsService } from '../forfaits.service';
 
 
 @Component({
@@ -10,21 +10,29 @@ import { forfaits } from '../mock-forfaits';
   styleUrls: ['./forfaits-cuba.component.css']
 })
 export class ForfaitsCubaComponent implements OnInit {
-  mesForfaits: Array<Forfait> = forfaits;
+  mesForfaits: Array<Forfait> ;
  
-  constructor() { }
 
   contains(destination, pays) {
-    console.log(destination);
-    console.log(pays);
-
     if (destination.includes(pays))
     {
       return true;
     }
   }
 
+  constructor(private forfaitsService: ForfaitsService) { }
+
   ngOnInit(): void {
+    this.getForfaits();
+
   }
+
+  getForfaits(): void {
+    this.forfaitsService.getForfaits()
+        .subscribe(resultat => {
+          this.mesForfaits = resultat
+        });
+
+}
 
 }

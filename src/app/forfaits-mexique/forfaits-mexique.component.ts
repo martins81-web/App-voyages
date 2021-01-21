@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Forfait } from '../forfait';
-import { forfaits } from '../mock-forfaits';
+import { ForfaitsService } from '../forfaits.service';
 
 @Component({
   selector: 'app-forfaits-mexique',
@@ -9,11 +9,20 @@ import { forfaits } from '../mock-forfaits';
   styleUrls: ['./forfaits-mexique.component.css']
 })
 export class ForfaitsMexiqueComponent implements OnInit {
-  mesForfaits: Array<Forfait> = forfaits;
-
-  constructor() { }
+  mesForfaits: Array<Forfait> ;
+  constructor(private forfaitsService: ForfaitsService) { }
 
   ngOnInit(): void {
+    this.getForfaits();
+
   }
+
+  getForfaits(): void {
+    this.forfaitsService.getForfaits()
+        .subscribe(resultat => {
+          this.mesForfaits = resultat
+        });
+
+}
 
 }

@@ -6,7 +6,7 @@
      <app-formulaire-recherche [(recherche)]="recherche"></app-formulaire-recherche>
     </mat-drawer>
   
-    <div>
+  <!--   <div>
      date de depart: {{recherche.dateDepart}} <br>
      duree: {{recherche.duree}} jours<br>
      etoiles: {{recherche.nbEtoiles}} étoiles<br>
@@ -17,13 +17,13 @@
         </div>
       </div>
       </div>
-    </div>
+    </div> -->
       
      <!-- Mini-forfaits (forfaits vedette) -->
     <div>
         <mat-grid-list cols="3" rowHeight="2:1">
             <span *ngFor="let item of mesForfaits">
-                <mat-grid-tile *ngIf="item.forfaitVedette">
+                <mat-grid-tile *ngIf="item.vedette">
                         <app-mini-forfait  [forfait]="item" style="width: 100%;" ></app-mini-forfait >
                 </mat-grid-tile>
             </span>

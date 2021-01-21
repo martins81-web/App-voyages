@@ -5,10 +5,10 @@
                 {{forfait.destination}} 
             </div>
             <div class='villeDepart'>
-                de {{forfait.villeDeDepart}}
+                de {{forfait.villeDepart}}
             </div>
         </div>
-        <span  *ngIf="forfait.forfaitVedette" >
+        <span  *ngIf="forfait.vedette" >
             <div class='forfaitVedette'>FORFAIT VEDETTE</div>
         </span>
     </div>
@@ -24,8 +24,8 @@
         <ng-template #elseBlock><span class='cardPrix'>{{forfait.prix}}$</span></ng-template>
     </div>
     <div class="footer">
-        <div><app-etoiles [etoiles]="forfait.hotel.etoiles" class='etoiles'></app-etoiles></div>
-        <div >{{forfait.dateDeDepart | date:'dd-MM-yyyy' }}, <span class='jours'>{{duree(forfait.dateDeDepart,forfait.dateDeRetour)}} jours</span> </div>
+        <div><app-etoiles [etoiles]="forfait.hotel.nombreEtoiles" class='etoiles'></app-etoiles></div>
+        <div >{{forfait.dateDepart | date:'dd-MM-yyyy' }}, <span class='jours'>{{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span> </div>
     </div>
 </mat-card>
 

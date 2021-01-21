@@ -18,7 +18,7 @@ export class MiniForfaitComponent implements OnInit {
   
 
   ngOnInit(): void {
-    let date1: Date = new Date(this.forfait.dateDeDepart); 
+    let date1: Date = new Date(this.forfait.dateDepart); 
     
     console.log(date1);
     //console.log('Forfait:', this.forfait );

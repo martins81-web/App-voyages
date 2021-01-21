@@ -1,37 +1,36 @@
- <div [ngClass]="{'forfaitComplet' : !forfait.forfaitVedette, 'forfaitCompletVedette': forfait.forfaitVedette}">
+ <div [ngClass]="{'forfaitComplet' : !forfait.vedette, 'forfaitCompletVedette': forfait.vedette}">
     <div style="display: flex; justify-content: space-between">
         
         <div style="display: flex; width: 80% ">
-            <img src={{forfait.hotel.photo}} alt="Girl in a jacket" width="500px" height="350px" style="border-right: 2px solid gray; 
-            border-top-left-radius: 23px;border-bottom-left-radius: 23px;">
-            <div style="display: flex; flex-direction: column; margin: 10px ; justify-content: space-between;">
+                <img src="https://milesopedia.com/wp-content/uploads/2019/05/IMG_0661.jpg" alt="" width="500px" height="360px" style="border-right: 2px solid gray; 
+                border-top-left-radius: 23px;border-bottom-left-radius: 23px;">
+            <div style="display: flex; flex-direction: column; margin: 10px ; justify-content: space-between; width: 100%">
                 
                     <div style="display: flex; justify-content: space-between;">
                         <div style="display: flex; flex-direction:column; align-items: flex-end;">
                             <div style="font-size: 1.5em;font-weight: lighter; ">{{forfait.destination}}</div> 
-                            <div style="font-size: 0.9em; font-weight: bold;"> de {{forfait.villeDeDepart}}</div> 
+                            <div style="font-size: 0.9em; font-weight: bold;"> de {{forfait.villeDepart}}</div> 
                         </div>
                         
-                        <span  *ngIf="forfait.forfaitVedette"  >
+                        <div *ngIf="forfait.vedette" >
                             <app-forfait-vedette></app-forfait-vedette>
-                        </span>  
+                        </div>  
                     </div>
-                    <div>
-                    <div style=" margin-top: 0.6em; display: flex; flex-direction: row; align-items: center;">
-                        <div style="color: rgb(69, 69, 238);font-size: 3em; line-height: normal;">{{forfait.hotel.nom}} </div>
-                        <app-etoiles style="font-size: 2em; margin-left: 25px; color:  goldenrod;" [etoiles]="forfait.hotel.etoiles"></app-etoiles>
-                    </div>
-                    <div style="font-size: 0.9em;">({{forfait.hotel.nbChambres}} chambres)</div>
-                    <div style=" font-size: 1em; margin-top: 10px;">
-                        <span *ngFor="let item of forfait.hotel.caracteristiques">
-                             {{item}} ·
-                        </span>
-                    </div>
-                </div>
-                     
-                
 
-                <div style="font-size:1em; ">{{forfait.hotel.adresse}}</div>
+                    <div>
+                        <div style=" margin-top: 0.6em; display: flex; flex-direction: row; align-items: center;">
+                            <div style="color: rgb(69, 69, 238);font-size: 3em; line-height: normal;">{{forfait.hotel.nom}} </div>
+                            <app-etoiles style="font-size: 2em; margin-left: 25px; color:  goldenrod;" [etoiles]="forfait.hotel.nombreEtoiles"></app-etoiles>
+                        </div>
+                        <div style="font-size: 0.9em;">({{forfait.hotel.nombreChambres}} chambres)</div>
+                        <div style=" font-size: 1em; margin-top: 10px;">
+                            <span *ngFor="let item of forfait.hotel.caracteristiques">
+                                {{item}} ·
+                            </span>
+                        </div>
+                    </div>
+
+                    <div style="font-size:1em; ">{{forfait.hotel.coordonnees}}</div>
             </div>
         </div>
         <div style="display: flex;flex-direction: column; justify-content: space-between;">
@@ -46,10 +45,10 @@
                 <div>tx et frais incl. par adulte</div>
             </div>
             <div style="display: flex; flex-direction: column;margin: 0.8em;align-items: flex-end">
-                <span class='jours' >{{duree(forfait.dateDeDepart,forfait.dateDeRetour)}} jours</span>
-                <div>Du <u>{{forfait.dateDeDepart | date:'dd-MM-yyyy' }}</u> au <u>{{forfait.dateDeRetour | date:'dd-MM-yyyy' }}</u></div>
+                <span class='jours' >{{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span>
+                <div>Du <u>{{forfait.dateDepart | date:'dd-MM-yyyy' }}</u> au <u>{{forfait.dateRetour | date:'dd-MM-yyyy' }}</u></div>
             </div>
             
-    </div>
+        </div>
     </div>
 </div>

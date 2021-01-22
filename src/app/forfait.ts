@@ -14,5 +14,4 @@ export interface Forfait {
     rabais: number,
     vedette: boolean,
     forfaitEnVedette: string,
-
 }

@@ -13,15 +13,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ForfaitsService {
-  forfaitsUrl = 'https://forfaits-voyages.herokuapp.com/api/forfaits/da/1996489';
-  deleteForfaitUrl = 'https://forfaits-voyages.herokuapp.com/api/forfaits/';
+  forfaitsUrl = 'https://forfaits-voyages.herokuapp.com/api/forfaits/';
+  
   constructor(private http: HttpClient) { }
 
   getForfaits(): Observable<Forfait[]> {
-    return this.http.get<Forfait[]>(this.forfaitsUrl);  
+    return this.http.get<Forfait[]>(this.forfaitsUrl+'da/1996489');  
   }
 
   addForfait(forfait: Forfait): Observable<Forfait> {
+    console.log(forfait);
     return this.http.post<Forfait>(this.forfaitsUrl, forfait, httpOptions);
   }
 
@@ -33,7 +34,7 @@ export class ForfaitsService {
 
    /** DELETE: suppression du forfait */
    deleteForfait(id: string): Observable<Forfait> {
-    return this.http.delete<Forfait>(this.deleteForfaitUrl + id, httpOptions);
+    return this.http.delete<Forfait>(this.forfaitsUrl + id, httpOptions);
   }
 
 }

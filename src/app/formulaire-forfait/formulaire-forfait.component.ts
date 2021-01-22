@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+
+import { Caracteristique } from '../caracteristique';
+import { CaracteristiquesComponent } from '../caracteristiques/caracteristiques.component';
+import { Forfait } from '../forfait';
+import { ForfaitsService } from '../forfaits.service';
 
 /**
  * @title Highlight the first autocomplete option
@@ -12,6 +19,7 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./formulaire-forfait.component.css']
 })
 export class FormulaireForfaitComponent implements OnInit {
+  
   nbEtoiles: number = 2;
   destinationsControl = new FormControl();
   villesDepartControl = new FormControl();
@@ -19,10 +27,19 @@ export class FormulaireForfaitComponent implements OnInit {
   filteredVillesDepart:  Observable<string[]>;
   villesDepart: string[] = ['Montréal', 'Toronto', 'Québec', 'Ottawa'];
   destinations: string[] = ['Méxique', 'Cuba', 'République dominicaine', 'Costa Rica', 'Guadaloupe', 'Haïti','Jamaïque', 'Martinique','Honduras'];
+  newForfait: any = {};
+  @Input() caracteristiques : Array<Caracteristique>;
   
-
+  constructor(private forfaitsService: ForfaitsService) { }
 
   ngOnInit() {
+    this.newForfait = {
+      da: "1996489",
+      hotel: {
+        caracteristiques :[]
+      }
+    }
+
     this.filteredDestinations = this.destinationsControl.valueChanges
       .pipe(
         startWith(''),
@@ -33,6 +50,15 @@ export class FormulaireForfaitComponent implements OnInit {
         startWith(''),
         map(value => this.filterVillesDepart(value))
       );
+  }
+
+  
+  onAdd(forfaitFormAjout: NgForm) {
+      this.getCarateristiques();
+      this.newForfait.dateDepart=this.newForfait.dateDepart.toLocaleDateString('en-CA');
+      this.newForfait.dateRetour=this.newForfait.dateRetour.toLocaleDateString('en-CA');
+      this.forfaitsService.addForfait(this.newForfait)
+          .subscribe(forfait  => { forfaitFormAjout.resetForm();});
   }
 
   private filterDestinations(value: string): string[] {
@@ -54,4 +80,14 @@ export class FormulaireForfaitComponent implements OnInit {
 
     return value;
   }
+
+  getCarateristiques() {
+    this.caracteristiques.map(item => {
+      if(item.selected)
+      this.newForfait.hotel.caracteristiques.push(item.name);
+    });
+  }
 }
+
+
+

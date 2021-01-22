@@ -25,8 +25,9 @@
                         <div style="font-size: 0.9em;">({{forfait.hotel.nombreChambres}} chambres)</div>
                         <div style=" font-size: 1em; margin-top: 10px;">
                             <span *ngFor="let item of forfait.hotel.caracteristiques">
-                                {{item}} ·
+                                · {{item}} 
                             </span>
+                            ·
                         </div>
                     </div>
 
@@ -46,7 +47,7 @@
             </div>
             <div style="display: flex; flex-direction: column;margin: 0.8em;align-items: flex-end">
                 <span class='jours' >{{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span>
-                <div>Du <u>{{forfait.dateDepart | date:'dd-MM-yyyy' }}</u> au <u>{{forfait.dateRetour | date:'dd-MM-yyyy' }}</u></div>
+                <div>Du <u>{{forfait.dateDepart}}</u> au <u>{{forfait.dateRetour }}</u></div>
             </div>
             
         </div>

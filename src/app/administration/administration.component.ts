@@ -38,5 +38,8 @@ onDelete(forfait: Forfait): void {
       .subscribe(result => this.mesForfaits = this.mesForfaits.filter(h => h !== forfait));
  }
 
+ onEdit(forfait: Forfait): void {
+   console.log(forfait.destination, forfait._id);
+ }
 
 }

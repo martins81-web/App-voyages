@@ -25,17 +25,16 @@
 
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
+
         <td mat-cell *matCellDef="let forfait" class="boutonsAction">
-          <!--   <button *ngIf="(selectedForfait && selectedForfait === forfait);else editButton;" color="primary" form="forfaitFormEdition" 
-     mat-button><i class="material-icons">done</i></button> -->
-            <!-- <ng-template #editButton>
-                <form (ngSubmit)="onSelect(hero)">
-                    <button mat-button><i class="material-icons">edit</i></button>
+            <div style="display: flex;">
+                <form (ngSubmit)="onEdit(forfait)">
+                    <button mat-button [routerLink]="['editForfait/', forfait._id]" [state]="forfait"><i class="material-icons">edit</i></button>
                 </form>
-            </ng-template> -->
-            <form (ngSubmit)="onDelete(forfait)">
-                <button mat-button ><i class="material-icons">delete</i></button>
-            </form>
+                <form (ngSubmit)="onDelete(forfait)">
+                    <button mat-button ><i class="material-icons">delete</i></button>
+                </form>
+            </div>
         </td>
      </ng-container>
      

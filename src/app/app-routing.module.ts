@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'forfaitsCuba', component: ForfaitsCubaComponent },
   { path: 'forfaitsMexique', component: ForfaitsMexiqueComponent },
   { path: 'admin/nouveauForfait', component: FormulaireForfaitComponent },
+  { path: 'admin/editForfait/:id', component: FormulaireForfaitComponent },
   { path: 'admin', component: AdministrationComponent },
   { path: '', redirectTo:'/accueil', pathMatch:'full' }, 
 ];

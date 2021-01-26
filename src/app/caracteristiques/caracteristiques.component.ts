@@ -12,7 +12,8 @@ export class CaracteristiquesComponent implements OnInit {
   @Input() direction: string;
   @Input() caract:  Array<Caracteristique>;
   @Output() caractChange = new EventEmitter();
-  
+  @Input() caracteristiquesEdit : Array<string>; 
+
   change(nouvelleValeur) {
     this.caractChange.emit(this.caracteristiques);
   }
@@ -37,6 +38,12 @@ export class CaracteristiquesComponent implements OnInit {
  
 
   ngOnInit(): void {
+    if (this.caracteristiquesEdit!==undefined){
+      this.caracteristiques.map( item => {
+        if(this.caracteristiquesEdit.includes(item.name)){
+          item.selected=true;
+        }
+      })}
   }
 
   

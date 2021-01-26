@@ -3,11 +3,18 @@
   <a routerLink="/admin" color='primary'>Retourner à la liste de forfaits</a>
 </div>
 <div style='padding:20px;margin:20px; border: 1px solid black'>
-  <form class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="onAdd(forfaitFormAjout);">
-    <div style="display: flex; justify-content: space-between;">
-      <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Creer un nouveau forfait de voyage</h1>
-      <button  color='warn' mat-raised-button	 type="submit" ><i class="material-icons">add</i> Ajouter Forfait</button>
+  <form class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="this.id===null ? onAdd(forfaitFormAjout) : onEdit(forfaitFormAjout) ">
+    <div *ngIf='this.id===null; else elseBlock' style="display: flex; justify-content: space-between;">
+        <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Creer un nouveau forfait de voyage</h1>
+        <button  color='warn' mat-raised-button	 type="submit" ><i class="material-icons">add</i> Ajouter Forfait</button>
     </div>
+    <ng-template #elseBlock>
+      <div style="display: flex; justify-content: space-between;">
+        <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Éditer le forfait de voyage</h1>
+        <button color='accent' mat-raised-button	 type="submit" ><i class="material-icons">edit</i> Enregistrer Forfait</button>
+      </div>
+    </ng-template>
+
       <div style='display: flex;'>
         <div style="flex: 1;">
           <h2>Détails sur le forfait</h2>
@@ -126,7 +133,7 @@
             >
           </mat-form-field>
     
-          <app-caracteristiques [(caract)]="caracteristiques"></app-caracteristiques>
+          <app-caracteristiques [(caract)]="caracteristiques" [caracteristiquesEdit]="newForfait.hotel.caracteristiques"></app-caracteristiques>
 
           
 

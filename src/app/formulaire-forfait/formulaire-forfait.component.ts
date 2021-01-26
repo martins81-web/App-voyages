@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -19,7 +20,7 @@ import { ForfaitsService } from '../forfaits.service';
   styleUrls: ['./formulaire-forfait.component.css']
 })
 export class FormulaireForfaitComponent implements OnInit {
-  
+  id: any= {};
   nbEtoiles: number = 2;
   destinationsControl = new FormControl();
   villesDepartControl = new FormControl();
@@ -28,11 +29,15 @@ export class FormulaireForfaitComponent implements OnInit {
   villesDepart: string[] = ['Montréal', 'Toronto', 'Québec', 'Ottawa'];
   destinations: string[] = ['Méxique', 'Cuba', 'République dominicaine', 'Costa Rica', 'Guadaloupe', 'Haïti','Jamaïque', 'Martinique','Honduras'];
   newForfait: any = {};
+  forfait: Forfait;
   @Input() caracteristiques : Array<Caracteristique>;
   
-  constructor(private forfaitsService: ForfaitsService) { }
+  constructor(private forfaitsService: ForfaitsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id);
+
     this.newForfait = {
       da: "1996489",
       hotel: {
@@ -40,6 +45,11 @@ export class FormulaireForfaitComponent implements OnInit {
       }
     }
 
+    if( this.id!==null){
+      this.newForfait=history.state;
+      
+    }
+    
     this.filteredDestinations = this.destinationsControl.valueChanges
       .pipe(
         startWith(''),
@@ -60,6 +70,11 @@ export class FormulaireForfaitComponent implements OnInit {
       this.forfaitsService.addForfait(this.newForfait)
           .subscribe(forfait  => { forfaitFormAjout.resetForm();});
   }
+
+  onEdit(forfaitFormAjout: NgForm) {
+    console.log('Edit');
+}
+
 
   private filterDestinations(value: string): string[] {
     const filterValue = value.toLowerCase();

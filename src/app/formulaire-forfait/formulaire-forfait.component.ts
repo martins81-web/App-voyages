@@ -2,7 +2,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -10,6 +11,7 @@ import { Caracteristique } from '../caracteristique';
 import { CaracteristiquesComponent } from '../caracteristiques/caracteristiques.component';
 import { Forfait } from '../forfait';
 import { ForfaitsService } from '../forfaits.service';
+import { Hotel } from '../hotel';
 
 /**
  * @title Highlight the first autocomplete option
@@ -20,7 +22,7 @@ import { ForfaitsService } from '../forfaits.service';
   styleUrls: ['./formulaire-forfait.component.css']
 })
 export class FormulaireForfaitComponent implements OnInit {
-  id: any= {};
+  id: string;
   nbEtoiles: number = 2;
   destinationsControl = new FormControl();
   villesDepartControl = new FormControl();
@@ -28,27 +30,32 @@ export class FormulaireForfaitComponent implements OnInit {
   filteredVillesDepart:  Observable<string[]>;
   villesDepart: string[] = ['Montréal', 'Toronto', 'Québec', 'Ottawa'];
   destinations: string[] = ['Méxique', 'Cuba', 'République dominicaine', 'Costa Rica', 'Guadaloupe', 'Haïti','Jamaïque', 'Martinique','Honduras'];
-  newForfait: any = {};
+  newForfait: any ;
   forfait: Forfait;
   @Input() caracteristiques : Array<Caracteristique>;
   
-  constructor(private forfaitsService: ForfaitsService, private route: ActivatedRoute) { }
+  constructor(private forfaitsService: ForfaitsService, private route: ActivatedRoute, private router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    //console.log(this.newForfait);
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
-
-    this.newForfait = {
-      da: "1996489",
-      hotel: {
-        caracteristiques :[]
-      }
-    }
-
+    //console.log(this.id);
     if( this.id!==null){
-      this.newForfait=history.state;
-      
+      this.forfaitsService.getForfait(this.id).subscribe(result =>
+        { 
+        this.newForfait = result;
+        //console.log(this.newForfait);
+       } );
+    } else {
+      this.newForfait = {
+        da: "1996489",
+        hotel: {
+          caracteristiques : []
+        }
+      }
+
     }
+
     
     this.filteredDestinations = this.destinationsControl.valueChanges
       .pipe(
@@ -68,7 +75,16 @@ export class FormulaireForfaitComponent implements OnInit {
       this.newForfait.dateDepart=this.newForfait.dateDepart.toLocaleDateString('en-CA');
       this.newForfait.dateRetour=this.newForfait.dateRetour.toLocaleDateString('en-CA');
       this.forfaitsService.addForfait(this.newForfait)
-          .subscribe(forfait  => { forfaitFormAjout.resetForm();});
+          .subscribe(forfait  => { 
+            forfaitFormAjout.resetForm();
+            this.router.navigate(['/admin']);
+            
+            this._snackBar.open("", "Forfait ajouté", {
+              duration: 2000,
+              verticalPosition: 'top'
+            });
+            
+            });
   }
 
   onEdit(forfaitFormAjout: NgForm) {

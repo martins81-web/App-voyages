@@ -11,9 +11,11 @@ export class EtoilesComponent implements OnInit {
   @Input() color: string;
   faStar = faStar;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
+
 
 }

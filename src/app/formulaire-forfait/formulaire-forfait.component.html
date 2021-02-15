@@ -2,8 +2,8 @@
   <i class="material-icons">subdirectory_arrow_left</i>
   <a routerLink="/admin" color='primary'>Retourner à la liste de forfaits</a>
 </div>
-<div style='padding:20px;margin:20px; border: 1px solid black'>
-  <form class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="this.id===null ? onAdd(forfaitFormAjout) : onEdit(forfaitFormAjout) ">
+<div style='padding:20px;margin:20px; border: 1px solid black' >
+  <form *ngIf='newForfait!==undefined' class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="this.id===null ? onAdd(forfaitFormAjout) : onEdit(forfaitFormAjout) ">
     <div *ngIf='this.id===null; else elseBlock' style="display: flex; justify-content: space-between;">
         <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Creer un nouveau forfait de voyage</h1>
         <button  color='warn' mat-raised-button	 type="submit" ><i class="material-icons">add</i> Ajouter Forfait</button>
@@ -11,7 +11,7 @@
     <ng-template #elseBlock>
       <div style="display: flex; justify-content: space-between;">
         <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Éditer le forfait de voyage</h1>
-        <button color='accent' mat-raised-button	 type="submit" ><i class="material-icons">edit</i> Enregistrer Forfait</button>
+        <button color='accent' mat-raised-button	 type="submit" ><i class="material-icons">save</i> Enregistrer Forfait</button>
       </div>
     </ng-template>
 
@@ -55,7 +55,7 @@
             <div style="display: flex; width: 90%;">
                 <mat-form-field  class="example-full-width">
                   <mat-label>Date de départ</mat-label>
-                  <input matInput  required [matDatepicker]="pickerDepart" [(ngModel)]="newForfait.dateDepart"  [ngModelOptions]="{standalone: true}">
+                  <input matInput  required [matDatepicker]="pickerDepart" [(ngModel)]="newForfait.dateDepart"  [ngModelOptions]="{standalone: true}" >
                   <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
                   <mat-datepicker required #pickerDepart></mat-datepicker>
                 </mat-form-field> 
@@ -95,10 +95,12 @@
                       matInput 
                       minLength='2'
                       required placeholder="Nom de l’hôtel..." 
-                      [(ngModel)]="newForfait.hotel.nom" [ngModelOptions]="{standalone: true}"
+                      [(ngModel)]="newForfait.hotel.nom" 
+                      [ngModelOptions]="{standalone: true}"
                 >
               </mat-form-field>
             </div>
+
             <div style='display: flex; align-items: center; '>
               <mat-label>Étoiles: </mat-label>
               <mat-slider
@@ -133,7 +135,9 @@
             >
           </mat-form-field>
     
-          <app-caracteristiques [(caract)]="caracteristiques" [caracteristiquesEdit]="newForfait.hotel.caracteristiques"></app-caracteristiques>
+          <app-caracteristiques   [(caract)]="caracteristiques" 
+                                  [caracteristiquesEdit]="newForfait.hotel.caracteristiques">
+          </app-caracteristiques>
 
           
 

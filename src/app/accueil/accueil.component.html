@@ -19,11 +19,11 @@
       </div>
     </div>
       
-     <!-- Mini-forfaits (forfaits vedette) -->
+     <!-- Liste de Mini-forfaits (forfaits vedette) -->
     <div>
         <mat-grid-list cols="3" rowHeight="2:1">
-            <span *ngFor="let item of mesForfaits">
-                <mat-grid-tile *ngIf="item.vedette">
+            <span *ngFor="let item of mesForfaits | slice:0:7; let i=index" >
+                <mat-grid-tile *ngIf="item.vedette" >
                         <app-mini-forfait  [forfait]="item" style="width: 100%;" ></app-mini-forfait >
                 </mat-grid-tile>
             </span>
@@ -41,6 +41,3 @@
   </mat-drawer-container>
 
 
-
- <!-- Formulaire de gestion -->
-<!-- <app-formulaire-forfait></app-formulaire-forfait> -->

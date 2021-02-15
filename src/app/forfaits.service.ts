@@ -21,6 +21,10 @@ export class ForfaitsService {
     return this.http.get<Forfait[]>(this.forfaitsUrl+'da/1996489');  
   }
 
+  getForfait(id: string ): Observable<Forfait[]> {
+    return this.http.get<Forfait[]>(this.forfaitsUrl+id);  
+  }
+
   addForfait(forfait: Forfait): Observable<Forfait> {
     console.log(forfait);
     return this.http.post<Forfait>(this.forfaitsUrl, forfait, httpOptions);

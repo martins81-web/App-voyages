@@ -5,6 +5,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
@@ -16,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -88,9 +90,13 @@ import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
     MatCheckboxModule,
     MatSidenavModule,
     MatSelectModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule
   ],
-  providers: [ForfaitsService],
+  providers: [
+    ForfaitsService,
+    {provide: MAT_DATE_LOCALE, useValue: 'fr-CA'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

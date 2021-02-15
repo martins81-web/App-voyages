@@ -12,6 +12,7 @@ export class AdministrationComponent implements OnInit {
   columnsToDisplay = ['dateDepart', 'dateRetour','nomHotel', 'prix', 'actions'];
   mesForfaits: Array<Forfait> ;
   selectedForfait : Forfait;
+  forfaitEdit: any;
 
   constructor(private forfaitsService: ForfaitsService) { }
 

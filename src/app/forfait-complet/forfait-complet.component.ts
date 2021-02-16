@@ -27,6 +27,9 @@ export class ForfaitCompletComponent implements OnInit {
   public duree(dateDeDepart: string, dateDeRetour:string): number {
     let date1: Date = new Date(dateDeDepart); 
     let date2: Date = new Date(dateDeRetour); 
-    return (date2.valueOf() - date1.valueOf())/ (1000 * 3600 * 24);
+    var difference = date2.getTime() - date1.getTime();
+    var days = Math.ceil(difference / (1000 * 3600 * 24));
+
+    return days;
   }
 }

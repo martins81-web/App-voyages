@@ -47,7 +47,7 @@
             </div>
             <div style="display: flex; flex-direction: column;margin: 0.8em;align-items: flex-end">
                 <span class='jours' >{{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span>
-                <div>Du <u>{{forfait.dateDepart}}</u> au <u>{{forfait.dateRetour }}</u></div>
+                <div>Du <u>{{forfait.dateDepart | date: 'yyyy-MM-dd'}}</u> au <u>{{forfait.dateRetour | date: 'yyyy-MM-dd' }}</u></div>
             </div>
             
         </div>

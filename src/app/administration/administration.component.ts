@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Forfait } from '../forfait';
 import { ForfaitsService } from '../forfaits.service';
@@ -14,7 +15,7 @@ export class AdministrationComponent implements OnInit {
   selectedForfait : Forfait;
   forfaitEdit: any;
 
-  constructor(private forfaitsService: ForfaitsService) { }
+  constructor(private forfaitsService: ForfaitsService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getForfaits();
@@ -36,11 +37,17 @@ export class AdministrationComponent implements OnInit {
 
 onDelete(forfait: Forfait): void {
   this.forfaitsService.deleteForfait(forfait._id)
-      .subscribe(result => this.mesForfaits = this.mesForfaits.filter(h => h !== forfait));
+      .subscribe(result => {
+        this.mesForfaits = this.mesForfaits.filter(h => h !== forfait)
+        this._snackBar.open("Administration", "Forfait supprimé", {
+          duration: 2000,
+          verticalPosition: 'top'
+        });
+      });
  }
 
  onEdit(forfait: Forfait): void {
-   console.log(forfait.destination, forfait._id);
+   //console.log(forfait.destination, forfait._id);
  }
 
 }

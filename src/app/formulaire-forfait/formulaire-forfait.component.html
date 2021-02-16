@@ -3,7 +3,7 @@
   <a routerLink="/admin" color='primary'>Retourner à la liste de forfaits</a>
 </div>
 <div style='padding:20px;margin:20px; border: 1px solid black' >
-  <form *ngIf='newForfait!==undefined' class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="this.id===null ? onAdd(forfaitFormAjout) : onEdit(forfaitFormAjout) ">
+  <form *ngIf='newForfait!==undefined  ' class="example-form" #forfaitFormAjout="ngForm" id="forfaitFormAjout" (ngSubmit)="this.id===null ? onAdd(forfaitFormAjout) : onEdit(forfaitFormAjout) ">
     <div *ngIf='this.id===null; else elseBlock' style="display: flex; justify-content: space-between;">
         <h1 style='text-transform: uppercase ; background-color: #3F51B5; color: beige; padding: 5px'>Creer un nouveau forfait de voyage</h1>
         <button  color='warn' mat-raised-button	 type="submit" ><i class="material-icons">add</i> Ajouter Forfait</button>

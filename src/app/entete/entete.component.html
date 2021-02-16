@@ -1,7 +1,11 @@
 <mat-toolbar style='color: white; height: 15vh; font-size: 3em; background-color: orangered;' >
-    <mat-icon>flight_takeoff</mat-icon>
-    <span style="font-size: 95% ; font-style: oblique;"> APP VOYAGES</span>
-    <mat-icon>flight_land</mat-icon>
+    <a style="  text-decoration: none;color: white; border: 2px solid white; padding: 2px" routerLink="accueil">
+        <div style=" border: 2px solid white; padding: 15px">
+            <mat-icon>flight_takeoff</mat-icon>
+            <span style="font-size: 95% ; font-style: oblique;"> APP VOYAGES</span>
+            <mat-icon>flight_land</mat-icon>
+        </div>
+    </a>
     <div class='space'></div>
     <a  style="font-size: 55% ;" routerLinkActive="active-link" mat-button routerLink="accueil">Accueil</a>
     <a  style="font-size: 55% ;" routerLinkActive="active-link" mat-button routerLink="forfaitsCuba">Forfaits Cuba</a>

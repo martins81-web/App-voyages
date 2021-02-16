@@ -79,7 +79,7 @@ export class FormulaireForfaitComponent implements OnInit {
             forfaitFormAjout.resetForm();
             this.router.navigate(['/admin']);
             
-            this._snackBar.open("", "Forfait ajouté", {
+            this._snackBar.open("Administration", "Forfait ajouté", {
               duration: 2000,
               verticalPosition: 'top'
             });
@@ -88,8 +88,27 @@ export class FormulaireForfaitComponent implements OnInit {
   }
 
   onEdit(forfaitFormAjout: NgForm) {
-    console.log('Edit');
-}
+    //console.log('Edit');
+    //console.log(this.caracteristiques);
+    
+      if(this.caracteristiques){
+        this.newForfait.hotel.caracteristiques = [];
+        this.getCarateristiques();
+      }
+
+      this.forfaitsService.updateForfait(this.newForfait)
+            .subscribe(() => {
+              this.newForfait = null
+              this.router.navigate(['/admin']);
+            
+              this._snackBar.open("Administration", "Forfait édité", {
+                duration: 2000,
+                verticalPosition: 'top'
+              });
+            });
+    }
+
+
 
 
   private filterDestinations(value: string): string[] {

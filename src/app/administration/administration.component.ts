@@ -14,6 +14,7 @@ export class AdministrationComponent implements OnInit {
   mesForfaits: Array<Forfait> ;
   selectedForfait : Forfait;
   forfaitEdit: any;
+  orange:'orangered';
 
   constructor(private forfaitsService: ForfaitsService,private _snackBar: MatSnackBar) { }
 
@@ -31,7 +32,7 @@ export class AdministrationComponent implements OnInit {
     this.forfaitsService.getForfaits()
         .subscribe(resultat => {
           this.mesForfaits = resultat
-          console.log(this.mesForfaits);
+          //console.log(this.mesForfaits);
         });
 }
 

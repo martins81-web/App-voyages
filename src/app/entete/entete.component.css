@@ -19,3 +19,11 @@ a:hover{
     text-decoration: underline;
 
 }
+
+.logo:hover {
+    background-color: white;
+}
+
+.logo:hover div {
+    background-color: orangered;
+}

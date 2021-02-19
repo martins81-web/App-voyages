@@ -19,10 +19,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChartsModule } from 'ng2-charts';
 
 import { AccueilComponent } from './accueil/accueil.component';
 import { AdministrationComponent } from './administration/administration.component';
@@ -39,9 +42,11 @@ import { ForfaitsMexiqueComponent } from './forfaits-mexique/forfaits-mexique.co
 import { ForfaitsService } from './forfaits.service';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
 import { FormulaireRechercheComponent } from './formulaire-recherche/formulaire-recherche.component';
+import { GraphiqueDestinationsComponent } from './graphique-destinations/graphique-destinations.component';
 import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
 import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
+import { GraphiquePrixMoyenPrixTotalDestinationComponent } from './graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +65,9 @@ import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
     AproposComponent,
     ForfaitsCubaComponent,
     ForfaitsMexiqueComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    GraphiqueDestinationsComponent,
+    GraphiquePrixMoyenPrixTotalDestinationComponent
   ],
   imports: [
     MatTableModule,
@@ -79,7 +86,10 @@ import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
     MatSliderModule,
     MatIconModule,
     MatListModule,
-    MatDividerModule,FontAwesomeModule,MatDatepickerModule,BrowserModule,
+    MatDividerModule,
+    FontAwesomeModule,
+    MatDatepickerModule,
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     MatSliderModule,
@@ -91,7 +101,10 @@ import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
     MatSidenavModule,
     MatSelectModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule,
+    ChartsModule,
+    MatTabsModule
   ],
   providers: [
     ForfaitsService,

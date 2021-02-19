@@ -55,25 +55,34 @@
 
 .sectionPrix{
     margin-bottom: 1.5em;
+    
 }
 
 .cardPrix{
     display:flex; 
     justify-content: space-around;
     font-size:1.6em;
+    align-items: center;
 }
 
 .prixRabais{
-    color: green
+    color: green;
 }
 
 .prixSansRabais{
     text-decoration: line-through; 
-    color: red
+    color: red;
 }
 
 .prixAvecRabais{
-    color: black
+    color: black;
+    border: goldenrod 5px solid;
+    padding: 5px;
+    border-radius: 25%;
+}
+
+.prixNormal{
+    padding: 10px;
 }
 
 .footer{

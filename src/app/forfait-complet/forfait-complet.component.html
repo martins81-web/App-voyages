@@ -38,8 +38,8 @@
             <div style="display: flex; flex-direction: column; align-items: flex-end; margin: 10px;">
                 <div>{{duree(forfait.dateDepart,forfait.dateRetour)}} jours à partir de</div>
                 <div *ngIf="forfait.rabais>0; else elseBlock" style="font-size: 2em; text-align: right; display: flex; flex-direction: column ;">
-                    <span style="text-decoration: line-through; color: red">{{forfait.prix}}$</span>
-                    <span style="color: green;"> {{forfait.rabais}}$</span>
+                    <span style="text-decoration: line-through; color: red; font-size: 60%;">{{forfait.prix}}$</span>
+                    <span style="color: green;font-size: 60%;"> {{forfait.rabais}}$</span>
                     <span >{{forfait.prix-forfait.rabais}}$</span>
                 </div>
                 <ng-template #elseBlock><span style="font-size: 2em;">{{forfait.prix}}$</span></ng-template>

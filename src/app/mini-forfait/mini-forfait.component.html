@@ -21,7 +21,7 @@
             <span class='prixRabais'>{{forfait.rabais}}$</span>
             <span class='prixAvecRabais'>{{forfait.prix-forfait.rabais}}$</span>
         </div>
-        <ng-template #elseBlock><span class='cardPrix'>{{forfait.prix}}$</span></ng-template>
+        <ng-template #elseBlock><span class='cardPrix prixNormal'>{{forfait.prix}}$</span></ng-template>
     </div>
     <div class="footer">
         <div><app-etoiles [etoiles]="forfait.hotel.nombreEtoiles" class='etoiles'></app-etoiles></div>

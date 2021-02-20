@@ -16,7 +16,7 @@ interface Duree {
 export class FormulaireRechercheComponent implements OnInit {
   constructor() { }
   direction:string="column";
-  nbEtoiles:number=2;
+  nbEtoiles:number=0;
   @Input() recherche: Recherche;
   @Output() rechercheChange = new EventEmitter();
   @Input() caracteristiques: Array<Caracteristique>;

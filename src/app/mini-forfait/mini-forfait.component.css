@@ -76,13 +76,13 @@
 
 .prixAvecRabais{
     color: black;
-    border: goldenrod 5px solid;
-    padding: 5px;
+    border: goldenrod 3px solid;
+    padding: 1px;
     border-radius: 25%;
 }
 
 .prixNormal{
-    padding: 10px;
+    padding: 2px;
 }
 
 .footer{

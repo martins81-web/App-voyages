@@ -1,23 +1,9 @@
 
 
 <mat-drawer-container class="example-container" autosize>
-    <!-- Formulaire de recherche -->
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-     <app-formulaire-recherche [(recherche)]="recherche"></app-formulaire-recherche>
-    </mat-drawer>
+    
   
-    <div>
-     date de depart: {{recherche.dateDepart}} <br>
-     duree: {{recherche.duree}} jours<br>
-     etoiles: {{recherche.nbEtoiles}} étoiles<br>
-     <div style='display:flex;'>caracteristiques:
-      <div *ngFor="let item of recherche.caracteristiques" >
-        <div *ngIf="item.selected" style='margin-right: 8px;'>
-             {{item.name}} 
-        </div>
-      </div>
-      </div>
-    </div>
+    
       
      <!-- Liste de Mini-forfaits (forfaits vedette) -->
     <div>
@@ -27,16 +13,26 @@
                         <app-mini-forfait  [forfait]="item" style="width: 100%;" ></app-mini-forfait >
                 </mat-grid-tile>
             </span>
-        </mat-grid-list>
-
-      <button type="button" mat-button (click)="drawer.toggle()" mat-raised-button color="primary" style="margin: 10px;">
-        Rechercher forfait
-      </button>
-    
+          </mat-grid-list>
     </div>
 
+    <!-- Formulaire de recherche -->
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <app-formulaire-recherche [(recherche)]="recherche" (closeDrawer)="drawer.toggle()"></app-formulaire-recherche>
+     </mat-drawer>
+     <!-- Ouvrir formulaire de recherche -->
+    <button class="my-class"
+              type="button"
+              mat-button 
+              (click)="drawer.toggle()" 
+              mat-raised-button 
+              color="primary" 
+      >
+        Rechercher forfait
+    </button>
+
     <!-- Liste de forfaits complets -->
-    <app-liste-forfaits></app-liste-forfaits> 
+    <app-liste-forfaits [(recherche)]="recherche"></app-liste-forfaits> 
 
   </mat-drawer-container>
 

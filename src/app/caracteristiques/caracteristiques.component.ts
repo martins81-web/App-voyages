@@ -38,6 +38,8 @@ export class CaracteristiquesComponent implements OnInit {
  
 
   ngOnInit(): void {
+    
+
     if (this.caracteristiquesEdit!==undefined){
       this.caracteristiques.map( item => {
         if(this.caracteristiquesEdit.includes(item.name)){

@@ -47,6 +47,7 @@ import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.componen
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
 import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
 import { GraphiquePrixMoyenPrixTotalDestinationComponent } from './graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component';
+import { RechercheForfaitPipe } from './recherche-forfait.pipe';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { GraphiquePrixMoyenPrixTotalDestinationComponent } from './graphique-pri
     ForfaitsMexiqueComponent,
     AdministrationComponent,
     GraphiqueDestinationsComponent,
-    GraphiquePrixMoyenPrixTotalDestinationComponent
+    GraphiquePrixMoyenPrixTotalDestinationComponent,
+    RechercheForfaitPipe
   ],
   imports: [
     MatTableModule,

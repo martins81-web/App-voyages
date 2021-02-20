@@ -121,7 +121,7 @@
                       type="text"
                       name="nom"
                       matInput 
-                      minLength='2'
+                      minlength='2'
                       required placeholder="Nom de l’hôtel..." 
                       [(ngModel)]="newForfait.hotel.nom" 
                       [ngModelOptions]="{standalone: true}"
@@ -130,6 +130,8 @@
                 <mat-error *ngIf="nom.hasError('required')">
                   Le nom de l'hôtel est <strong>obligatoire!</strong>
                 </mat-error>
+                <mat-error *ngIf="nom.hasError('minlength')">Le nom de l'hôtel doit contenir au moins 2 caractères.</mat-error>
+
               </mat-form-field>
 
             </div>
@@ -158,7 +160,7 @@
             <mat-label>Coordonnées </mat-label>
             <input matInput required 
             name='coordonnees'
-            minLength='2'
+            minlength='2'
             placeholder="Adresse..."
             [(ngModel)]="newForfait.hotel.coordonnees" [ngModelOptions]="{standalone: true}"
             #coordonnees="ngModel"
@@ -167,6 +169,7 @@
             <mat-error *ngIf="coordonnees.hasError('required')">
               Les coordonnées de l'hotel sont <strong>obligatoires!</strong>
             </mat-error>
+            <mat-error *ngIf="coordonnees.hasError('minlength')">Les coordonnés de l'hôtel doivent contenir au moins 2 caractères.</mat-error>
           </mat-form-field>
       
           

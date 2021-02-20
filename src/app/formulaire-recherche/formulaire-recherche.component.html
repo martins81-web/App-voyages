@@ -13,13 +13,13 @@
   <mat-form-field appearance="fill">
     <mat-label>Durée</mat-label>
     <mat-select [(ngModel)]="recherche.duree" (ngModelChange)="changeDuree($event)">
-      <mat-option *ngFor="let duree of durees" [value]="duree.valeur"  >
+      <mat-option *ngFor="let duree of durees" [value]="duree.valeur" >
         {{duree.valeurAffichee}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <app-caracteristiques [direction]="direction" [(caract)]="recherche.caracteristiques"></app-caracteristiques>
+  <app-caracteristiques [direction]="direction" [(caract)]="recherche.caracteristiques"  (caractChange)="changeCaracteristiques($event)" ></app-caracteristiques>
   
   <br>
       <div style='display: flex; align-items: center; '>
@@ -35,6 +35,11 @@
             max="6">
           </mat-slider> 
         <app-etoiles [etoiles]="recherche.nbEtoiles" style="color: goldenrod;"></app-etoiles>
+  </div>
+
+  <div style="display: flex;justify-content: space-between;">
+    <button style="flex: 1; margin-right: 2px;" mat-raised-button color="warn"  (click)="resetRecherche()" >Reset recherche</button>
+    <button style="flex: 1; margin-left: 2px;" mat-raised-button color="primary" (click)="handleClick($event)" >Fermer</button>
   </div>
 </div>
     

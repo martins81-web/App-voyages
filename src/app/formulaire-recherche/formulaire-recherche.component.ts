@@ -20,7 +20,12 @@ export class FormulaireRechercheComponent implements OnInit {
   @Input() recherche: Recherche;
   @Output() rechercheChange = new EventEmitter();
   @Input() caracteristiques: Array<Caracteristique>;
+  @Output() public closeDrawer = new EventEmitter<MouseEvent>();
     
+    public handleClick(event: MouseEvent) {
+        this.closeDrawer.emit(event);
+    }
+  
   changeDateDepart(nouvelleValeur) {
     let nouvelleRecherche : Recherche = {dateDepart: nouvelleValeur,
                                         duree: this.recherche.duree,
@@ -52,11 +57,35 @@ export class FormulaireRechercheComponent implements OnInit {
     this.rechercheChange.emit(nouvelleRecherche);
   }
 
+  changeCaracteristiques(nouvelleValeur) {
+    let nouvelleRecherche : Recherche = {dateDepart: this.recherche.dateDepart,
+                                        duree: this.recherche.duree,
+                                        caracteristiques: nouvelleValeur,
+                                        nbEtoiles: this.recherche.nbEtoiles
+    };
+    this.recherche = nouvelleRecherche;
+    this.rechercheChange.emit(nouvelleRecherche);
+  }
+
   ngOnInit(): void{
   }
 
+  resetRecherche(){
+    let nouvelleRecherche : Recherche = {
+      dateDepart: null,
+      duree: null,
+      caracteristiques: [],
+      nbEtoiles: null
+    };
+    this.recherche.caracteristiques.map(item=>{
+      item.selected=false;
+    });
+    this.rechercheChange.emit(nouvelleRecherche);
 
-  
+  }
+
+
+
   formatLabel(value: number) {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';

@@ -17,8 +17,10 @@ export class AccueilComponent implements OnInit {
     dateDepart : null,
     duree: null,
     caracteristiques: [],
-    nbEtoiles: null}
-    ;
+    nbEtoiles: null };
+
+    @Input() closeDrawer: boolean;
+
   ngOnInit(): void {
     this.getForfaits();
   }

@@ -51,7 +51,9 @@ export class FormulaireForfaitComponent implements OnInit {
         da: "1996489",
         hotel: {
           caracteristiques : []
-        }
+        },
+        vedette: false
+        
       }
 
     }

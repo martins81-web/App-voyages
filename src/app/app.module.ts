@@ -5,8 +5,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DateAdapter } from '@angular/material/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -43,10 +45,12 @@ import { ForfaitsService } from './forfaits.service';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
 import { FormulaireRechercheComponent } from './formulaire-recherche/formulaire-recherche.component';
 import { GraphiqueDestinationsComponent } from './graphique-destinations/graphique-destinations.component';
+import {
+  GraphiquePrixMoyenPrixTotalDestinationComponent,
+} from './graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component';
 import { ListeForfaitsComponent } from './liste-forfaits/liste-forfaits.component';
 import { MiniForfaitComponent } from './mini-forfait/mini-forfait.component';
 import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
-import { GraphiquePrixMoyenPrixTotalDestinationComponent } from './graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component';
 import { RechercheForfaitPipe } from './recherche-forfait.pipe';
 
 @NgModule({
@@ -110,7 +114,8 @@ import { RechercheForfaitPipe } from './recherche-forfait.pipe';
   ],
   providers: [
     ForfaitsService,
-    {provide: MAT_DATE_LOCALE, useValue: 'fr-CA'}
+    {provide: MAT_DATE_LOCALE, useValue: 'fr-ca'},
+    {provide: DateAdapter, useClass: NativeDateAdapter}
   ],
   bootstrap: [AppComponent]
 })

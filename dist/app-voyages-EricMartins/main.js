@@ -840,7 +840,8 @@ class FormulaireForfaitComponent {
                 da: "1996489",
                 hotel: {
                     caracteristiques: []
-                }
+                },
+                vedette: false
             };
         }
         this.filteredDestinations = this.destinationsControl.valueChanges
@@ -901,7 +902,7 @@ class FormulaireForfaitComponent {
     }
 }
 FormulaireForfaitComponent.ɵfac = function FormulaireForfaitComponent_Factory(t) { return new (t || FormulaireForfaitComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_forfaits_service__WEBPACK_IMPORTED_MODULE_3__["ForfaitsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"])); };
-FormulaireForfaitComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FormulaireForfaitComponent, selectors: [["app-formulaire-forfait"]], inputs: { caracteristiques: "caracteristiques" }, decls: 7, vars: 5, consts: [[2, "padding", "15px", "padding-bottom", "0px", "font-size", "20px"], [1, "material-icons"], ["routerLink", "/admin", "color", "primary"], [3, "ngClass"], ["class", "example-form", "id", "forfaitFormAjout", 3, "ngSubmit", 4, "ngIf"], ["id", "forfaitFormAjout", 1, "example-form", 3, "ngSubmit"], ["forfaitFormAjout", "ngForm"], ["style", "display: flex; justify-content: space-between;", 4, "ngIf", "ngIfElse"], ["elseBlock", ""], [2, "display", "flex"], [2, "flex", "1"], [1, "example-full-width"], ["type", "text", "name", "destination", "required", "", "placeholder", "Destination", "aria-label", "Number", "matInput", "", 3, "matAutocomplete", "ngModel", "ngModelOptions", "ngModelChange"], ["destination", "ngModel"], [4, "ngIf"], ["auto1", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "name", "villeDepart", "required", "", "placeholder", "Ville de d\u00E9part", "aria-label", "Number", "matInput", "", 3, "matAutocomplete", "ngModel", "ngModelOptions", "ngModelChange"], ["villeDepart", "ngModel"], ["auto2", "matAutocomplete"], [2, "display", "flex", "width", "90%"], ["matInput", "", "required", "", "name", "dateDepart", 3, "matDatepicker", "ngModel", "ngModelOptions", "ngModelChange"], ["dateDepart", "ngModel"], ["matSuffix", "", 3, "for"], ["required", ""], ["pickerDepart", ""], [1, "example-full-width", 2, "margin-left", "10px"], ["matInput", "", "required", "", "name", "dateRetour", 3, "matDatepicker", "ngModel", "ngModelOptions", "ngModelChange"], ["dateRetour", "ngModel"], ["pickerRetour", ""], ["matInput", "", "required", "", "type", "number", "min", "1", "placeholder", "Prix...", "name", "prix", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["prix", "ngModel"], ["matInput", "", "type", "number", "min", "1", "placeholder", "Rabais...", 3, "ngModel", "ngModelOptions", "ngModelChange"], [2, "display", "flex", "margin-top", "20px"], [1, "example-margin", 3, "ngModel", "ngModelOptions", "ngModelChange"], [2, "width", "75%"], ["type", "text", "name", "nom", "matInput", "", "minlength", "2", "required", "", "placeholder", "Nom de l\u2019h\u00F4tel...", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["nom", "ngModel"], [2, "display", "flex", "align-items", "center"], ["name", "etoiles", "required", "", "thumbLabel", "", "tickInterval", "1", "min", "1", "max", "6", 3, "ngModel", "ngModelOptions", "displayWith", "ngModelChange"], ["etoiles", "ngModel"], [2, "color", "goldenrod", 3, "etoiles"], ["matInput", "", "required", "", "name", "coordonnees", "minlength", "2", "placeholder", "Adresse...", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["coordonnees", "ngModel"], ["matInput", "", "type", "number", "min", "1", "placeholder", "Nombre de chambres...", 3, "ngModel", "ngModelOptions", "ngModelChange"], [3, "caract", "caracteristiquesEdit", "caractChange"], [2, "display", "flex", "justify-content", "space-between"], [2, "text-transform", "uppercase", "background-color", "#3F51B5", "color", "beige", "padding", "5px"], ["color", "warn", "mat-raised-button", "", "type", "submit"], ["color", "accent", "mat-raised-button", "", "type", "submit"], [3, "value"]], template: function FormulaireForfaitComponent_Template(rf, ctx) { if (rf & 1) {
+FormulaireForfaitComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FormulaireForfaitComponent, selectors: [["app-formulaire-forfait"]], inputs: { caracteristiques: "caracteristiques" }, decls: 7, vars: 5, consts: [[2, "padding", "15px", "padding-bottom", "0px", "font-size", "20px"], [1, "material-icons"], ["routerLink", "/admin", "color", "primary"], [3, "ngClass"], ["class", "example-form", "id", "forfaitFormAjout", 3, "ngSubmit", 4, "ngIf"], ["id", "forfaitFormAjout", 1, "example-form", 3, "ngSubmit"], ["forfaitFormAjout", "ngForm"], ["style", "display: flex; justify-content: space-between;", 4, "ngIf", "ngIfElse"], ["elseBlock", ""], [2, "display", "flex"], [2, "flex", "1"], [1, "example-full-width"], ["type", "text", "name", "destination", "required", "", "placeholder", "Destination", "aria-label", "Number", "matInput", "", 3, "matAutocomplete", "ngModel", "ngModelOptions", "ngModelChange"], ["destination", "ngModel"], [4, "ngIf"], ["auto1", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "name", "villeDepart", "required", "", "placeholder", "Ville de d\u00E9part", "aria-label", "Number", "matInput", "", 3, "matAutocomplete", "ngModel", "ngModelOptions", "ngModelChange"], ["villeDepart", "ngModel"], ["auto2", "matAutocomplete"], [2, "display", "flex", "width", "90%"], ["matInput", "", "required", "", "name", "dateDepart", 3, "matDatepicker", "ngModel", "ngModelOptions", "ngModelChange"], ["dateDepart", "ngModel"], ["matSuffix", "", 3, "for"], ["required", ""], ["pickerDepart", ""], [1, "example-full-width", 2, "margin-left", "10px"], ["matInput", "", "required", "", "name", "dateRetour", 3, "matDatepicker", "ngModel", "ngModelOptions", "ngModelChange"], ["dateRetour", "ngModel"], ["pickerRetour", ""], ["matInput", "", "required", "", "type", "number", "min", "1", "placeholder", "Prix...", "name", "prix", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["prix", "ngModel"], ["matInput", "", "type", "number", "min", "1", "placeholder", "Rabais...", 3, "ngModel", "ngModelOptions", "ngModelChange"], [2, "display", "flex", "margin-top", "20px"], [1, "example-margin", 3, "ngModel", "ngModelOptions", "ngModelChange"], [2, "width", "75%"], ["type", "text", "name", "nom", "matInput", "", "minlength", "2", "required", "", "placeholder", "Nom de l\u2019h\u00F4tel...", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["nom", "ngModel"], [2, "display", "flex", "align-items", "center"], ["name", "etoiles", "required", "", "thumbLabel", "", "tickInterval", "1", "min", "1", "max", "6", 3, "ngModel", "ngModelOptions", "displayWith", "ngModelChange"], ["etoiles", "ngModel"], [2, "color", "goldenrod", 3, "etoiles"], ["matInput", "", "required", "", "name", "coordonnees", "minlength", "2", "placeholder", "Adresse...", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["coordonnees", "ngModel"], ["matInput", "", "type", "number", "min", "1", "placeholder", "Nombre de chambres...", "required", "", 3, "ngModel", "ngModelOptions", "ngModelChange"], [3, "caract", "caracteristiquesEdit", "caractChange"], [2, "display", "flex", "justify-content", "space-between"], [2, "text-transform", "uppercase", "background-color", "#3F51B5", "color", "beige", "padding", "5px"], ["color", "warn", "mat-raised-button", "", "type", "submit"], ["color", "accent", "mat-raised-button", "", "type", "submit"], [3, "value"]], template: function FormulaireForfaitComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "i", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "subdirectory_arrow_left");
@@ -2095,11 +2096,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _formulaire_forfait_formulaire_forfait_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./formulaire-forfait/formulaire-forfait.component */ "AZKv");
 /* harmony import */ var _formulaire_recherche_formulaire_recherche_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./formulaire-recherche/formulaire-recherche.component */ "eLiL");
 /* harmony import */ var _graphique_destinations_graphique_destinations_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./graphique-destinations/graphique-destinations.component */ "KIBf");
-/* harmony import */ var _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./liste-forfaits/liste-forfaits.component */ "i7eW");
-/* harmony import */ var _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./mini-forfait/mini-forfait.component */ "8fRa");
-/* harmony import */ var _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./pied-de-page/pied-de-page.component */ "LshM");
-/* harmony import */ var _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component */ "lALC");
+/* harmony import */ var _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./graphique-prix-moyen-prix-total-destination/graphique-prix-moyen-prix-total-destination.component */ "lALC");
+/* harmony import */ var _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./liste-forfaits/liste-forfaits.component */ "i7eW");
+/* harmony import */ var _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./mini-forfait/mini-forfait.component */ "8fRa");
+/* harmony import */ var _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./pied-de-page/pied-de-page.component */ "LshM");
 /* harmony import */ var _recherche_forfait_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./recherche-forfait.pipe */ "EWKk");
+
+
 
 
 
@@ -2155,7 +2158,8 @@ class AppModule {
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_30__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
         _forfaits_service__WEBPACK_IMPORTED_MODULE_39__["ForfaitsService"],
-        { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MAT_DATE_LOCALE"], useValue: 'fr-CA' }
+        { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MAT_DATE_LOCALE"], useValue: 'fr-ca' },
+        { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["DateAdapter"], useClass: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["NativeDateAdapter"] }
     ], imports: [[
             _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClientModule"],
@@ -2194,8 +2198,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_material_tabs__WEBPACK_IMPORTED_MODULE_20__["MatTabsModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_30__["AppComponent"],
-        _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_43__["ListeForfaitsComponent"],
-        _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_44__["MiniForfaitComponent"],
+        _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_44__["ListeForfaitsComponent"],
+        _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_45__["MiniForfaitComponent"],
         _forfait_complet_forfait_complet_component__WEBPACK_IMPORTED_MODULE_35__["ForfaitCompletComponent"],
         _formulaire_forfait_formulaire_forfait_component__WEBPACK_IMPORTED_MODULE_40__["FormulaireForfaitComponent"],
         _etoiles_etoiles_component__WEBPACK_IMPORTED_MODULE_34__["EtoilesComponent"],
@@ -2204,13 +2208,13 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _caracteristiques_caracteristiques_component__WEBPACK_IMPORTED_MODULE_32__["CaracteristiquesComponent"],
         _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_27__["AccueilComponent"],
         _entete_entete_component__WEBPACK_IMPORTED_MODULE_33__["EnteteComponent"],
-        _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_45__["PiedDePageComponent"],
+        _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_46__["PiedDePageComponent"],
         _apropos_apropos_component__WEBPACK_IMPORTED_MODULE_31__["AproposComponent"],
         _forfaits_cuba_forfaits_cuba_component__WEBPACK_IMPORTED_MODULE_37__["ForfaitsCubaComponent"],
         _forfaits_mexique_forfaits_mexique_component__WEBPACK_IMPORTED_MODULE_38__["ForfaitsMexiqueComponent"],
         _administration_administration_component__WEBPACK_IMPORTED_MODULE_28__["AdministrationComponent"],
         _graphique_destinations_graphique_destinations_component__WEBPACK_IMPORTED_MODULE_42__["GraphiqueDestinationsComponent"],
-        _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_46__["GraphiquePrixMoyenPrixTotalDestinationComponent"],
+        _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_43__["GraphiquePrixMoyenPrixTotalDestinationComponent"],
         _recherche_forfait_pipe__WEBPACK_IMPORTED_MODULE_47__["RechercheForfaitPipe"]], imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTableModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClientModule"],
         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_23__["BrowserModule"],
@@ -2251,8 +2255,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         args: [{
                 declarations: [
                     _app_component__WEBPACK_IMPORTED_MODULE_30__["AppComponent"],
-                    _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_43__["ListeForfaitsComponent"],
-                    _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_44__["MiniForfaitComponent"],
+                    _liste_forfaits_liste_forfaits_component__WEBPACK_IMPORTED_MODULE_44__["ListeForfaitsComponent"],
+                    _mini_forfait_mini_forfait_component__WEBPACK_IMPORTED_MODULE_45__["MiniForfaitComponent"],
                     _forfait_complet_forfait_complet_component__WEBPACK_IMPORTED_MODULE_35__["ForfaitCompletComponent"],
                     _formulaire_forfait_formulaire_forfait_component__WEBPACK_IMPORTED_MODULE_40__["FormulaireForfaitComponent"],
                     _etoiles_etoiles_component__WEBPACK_IMPORTED_MODULE_34__["EtoilesComponent"],
@@ -2261,13 +2265,13 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _caracteristiques_caracteristiques_component__WEBPACK_IMPORTED_MODULE_32__["CaracteristiquesComponent"],
                     _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_27__["AccueilComponent"],
                     _entete_entete_component__WEBPACK_IMPORTED_MODULE_33__["EnteteComponent"],
-                    _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_45__["PiedDePageComponent"],
+                    _pied_de_page_pied_de_page_component__WEBPACK_IMPORTED_MODULE_46__["PiedDePageComponent"],
                     _apropos_apropos_component__WEBPACK_IMPORTED_MODULE_31__["AproposComponent"],
                     _forfaits_cuba_forfaits_cuba_component__WEBPACK_IMPORTED_MODULE_37__["ForfaitsCubaComponent"],
                     _forfaits_mexique_forfaits_mexique_component__WEBPACK_IMPORTED_MODULE_38__["ForfaitsMexiqueComponent"],
                     _administration_administration_component__WEBPACK_IMPORTED_MODULE_28__["AdministrationComponent"],
                     _graphique_destinations_graphique_destinations_component__WEBPACK_IMPORTED_MODULE_42__["GraphiqueDestinationsComponent"],
-                    _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_46__["GraphiquePrixMoyenPrixTotalDestinationComponent"],
+                    _graphique_prix_moyen_prix_total_destination_graphique_prix_moyen_prix_total_destination_component__WEBPACK_IMPORTED_MODULE_43__["GraphiquePrixMoyenPrixTotalDestinationComponent"],
                     _recherche_forfait_pipe__WEBPACK_IMPORTED_MODULE_47__["RechercheForfaitPipe"]
                 ],
                 imports: [
@@ -2309,7 +2313,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 ],
                 providers: [
                     _forfaits_service__WEBPACK_IMPORTED_MODULE_39__["ForfaitsService"],
-                    { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MAT_DATE_LOCALE"], useValue: 'fr-CA' }
+                    { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MAT_DATE_LOCALE"], useValue: 'fr-ca' },
+                    { provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["DateAdapter"], useClass: _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["NativeDateAdapter"] }
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_30__["AppComponent"]]
             }]

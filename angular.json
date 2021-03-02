@@ -119,6 +119,10 @@
               "devServerTarget": "app-voyages-EricMartins:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

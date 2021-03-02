@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'admin/editForfait/:id', component: FormulaireForfaitComponent },
   { path: 'admin', component: AdministrationComponent },
   { path: '', redirectTo:'/accueil', pathMatch:'full' }, 
+  { path: '**', component: AccueilComponent }
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -10,6 +11,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -35,6 +37,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 import { EnteteComponent } from './entete/entete.component';
 import { EtoilesComponent } from './etoiles/etoiles.component';
 import { ForfaitCompletComponent } from './forfait-complet/forfait-complet.component';
@@ -73,7 +76,8 @@ import { RechercheForfaitPipe } from './recherche-forfait.pipe';
     AdministrationComponent,
     GraphiqueDestinationsComponent,
     GraphiquePrixMoyenPrixTotalDestinationComponent,
-    RechercheForfaitPipe
+    RechercheForfaitPipe,
+    DialogDeleteComponent
   ],
   imports: [
     MatTableModule,
@@ -110,11 +114,13 @@ import { RechercheForfaitPipe } from './recherche-forfait.pipe';
     MatSnackBarModule,
     MatTooltipModule,
     ChartsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [
     ForfaitsService,
-    {provide: MAT_DATE_LOCALE, useValue: 'fr-ca'},
+        {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: 'fr-ca'},
+        {provide: MAT_DATE_LOCALE, useValue: 'fr-ca'},
     {provide: DateAdapter, useClass: NativeDateAdapter}
   ],
   bootstrap: [AppComponent]

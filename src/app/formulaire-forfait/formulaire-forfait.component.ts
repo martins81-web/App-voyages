@@ -2,6 +2,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { DateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -74,8 +76,6 @@ export class FormulaireForfaitComponent implements OnInit {
   
   onAdd(forfaitFormAjout: NgForm) {
       this.getCarateristiques();
-      this.newForfait.dateDepart=this.newForfait.dateDepart.toLocaleDateString('en-CA');
-      this.newForfait.dateRetour=this.newForfait.dateRetour.toLocaleDateString('en-CA');
       this.forfaitsService.addForfait(this.newForfait)
           .subscribe(forfait  => { 
             forfaitFormAjout.resetForm();
@@ -94,6 +94,7 @@ export class FormulaireForfaitComponent implements OnInit {
     //console.log(this.caracteristiques);
     
       if(this.caracteristiques){
+      
         this.newForfait.hotel.caracteristiques = [];
         this.getCarateristiques();
       }
@@ -139,6 +140,8 @@ export class FormulaireForfaitComponent implements OnInit {
       this.newForfait.hotel.caracteristiques.push(item.name);
     });
   }
+
+
 }
 
 

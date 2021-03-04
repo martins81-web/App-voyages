@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { Forfait } from '../forfait';
 import { ForfaitsService } from '../forfaits.service';
 
@@ -16,7 +18,7 @@ export class AdministrationComponent implements OnInit {
   forfaitEdit: any;
   orange:'orangered';
 
-  constructor(private forfaitsService: ForfaitsService,private _snackBar: MatSnackBar) { }
+  constructor(private forfaitsService: ForfaitsService,private _snackBar: MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getForfaits();
@@ -50,5 +52,18 @@ onDelete(forfait: Forfait): void {
  onEdit(forfait: Forfait): void {
    //console.log(forfait.destination, forfait._id);
  }
+
+ openDialog(forfait: Forfait): void {
+  const dialogRef = this.dialog.open(DialogDeleteComponent, {
+    width: '700px',
+    data: {forfait: forfait}
+  });
+
+  dialogRef.afterClosed().subscribe(forfait => {
+    //console.log(`Dialog result: ${forfait}`);  
+    if(forfait!=='close')
+    this.onDelete(forfait);
+  });
+}
 
 }

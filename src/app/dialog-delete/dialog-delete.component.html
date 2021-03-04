@@ -1,0 +1,14 @@
+
+
+<h1 mat-dialog-title style='font-weight: bold; background-color: orangered; padding: 10px; color: white; border-bottom: 5px solid black;'>Suppression</h1>
+
+<app-mini-forfait  [forfait]="data.forfait" style="width: 100%;" ></app-mini-forfait >
+<div style='display:flex; justify-content: space-between; align-items: end; align-content: center; margin-top: 15px;'>
+    <div>
+        <h2 style="text-decoration: underline;">Voulez vous vraiment supprimer ce forfait?</h2>
+    </div>
+    <div >
+        <button mat-stroked-button color="primary" (click)="onNoClick()" style="margin-right: 5px;">Non</button>
+        <button mat-raised-button color="warn" (click)="onDelete(data.forfait)" >Oui</button>
+    </div>
+</div>

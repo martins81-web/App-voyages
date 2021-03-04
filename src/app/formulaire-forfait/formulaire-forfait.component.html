@@ -63,20 +63,23 @@
           </mat-form-field>
         
             <div style="display: flex; width: 90%;">
-                <mat-form-field  class="example-full-width">
+                <mat-form-field  appearance="fill">
                   <mat-label>Date de départ</mat-label>
-                  <input matInput  required [matDatepicker]="pickerDepart" [(ngModel)]="newForfait.dateDepart"  [ngModelOptions]="{standalone: true}" 
+                  <input matInput required [matDatepicker]="pickerDepart" 
+                  [(ngModel)]="newForfait.dateDepart"  
+                  [ngModelOptions]="{standalone: true}" 
                   name='dateDepart'
                   #dateDepart="ngModel"
                   >
                   <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
-                  <mat-datepicker required #pickerDepart></mat-datepicker>
+                  <mat-datepicker required #pickerDepart>
+                  </mat-datepicker>
                   <mat-error *ngIf="dateDepart.hasError('required')">
                     La date de départ est <strong>obligatoire!</strong>
                   </mat-error>
                 </mat-form-field> 
 
-                <mat-form-field  class="example-full-width"  style="margin-left: 10px;">
+                <mat-form-field  appearance="fill"  style="margin-left: 10px;">
                   <mat-label>Date de retour</mat-label>
                   <input matInput required [matDatepicker]="pickerRetour"  [(ngModel)]="newForfait.dateRetour"  [ngModelOptions]="{standalone: true}"
                   name='dateRetour'

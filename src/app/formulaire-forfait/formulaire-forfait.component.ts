@@ -140,7 +140,9 @@ export class FormulaireForfaitComponent implements OnInit {
       this.newForfait.hotel.caracteristiques.push(item.name);
     });
   }
-
+  somethingChanged(newObj){
+    console.log(newObj);
+  }
 
 }
 

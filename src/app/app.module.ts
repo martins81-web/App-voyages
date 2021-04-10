@@ -2,11 +2,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DateAdapter } from '@angular/material/core';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NativeDateAdapter } from '@angular/material/core';
@@ -119,9 +121,9 @@ import { RechercheForfaitPipe } from './recherche-forfait.pipe';
   ],
   providers: [
     ForfaitsService,
-        {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: 'fr-ca'},
-        {provide: MAT_DATE_LOCALE, useValue: 'fr-ca'},
-    {provide: DateAdapter, useClass: NativeDateAdapter}
+    {provide: MAT_DATE_LOCALE, useValue: 'fr-CA'},
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
   ],
   bootstrap: [AppComponent]
 })
